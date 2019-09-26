@@ -16,7 +16,7 @@ add_subdirectory(lib/fmt)
 add_subdirectory(lib/imgui)
 
 
-add_executable(mindreader main.cpp opengl_shader.cpp file_manager.cpp)
+add_executable(mindreader main.cpp)
 
 add_definitions(-DIMGUI_IMPL_OPENGL_LOADER_GLEW)
 
