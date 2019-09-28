@@ -18,3 +18,4 @@ add_library(imgui STATIC ${IMGUI_HEADERS} ${IMGUI_SOURCES})
 
 target_include_directories(imgui PUBLIC ${GLFW_INCLUDE_DIRS})
 target_compile_definitions(imgui PUBLIC IMPL_OPENGL_LOADER_GLEW)
+add_definitions(-DIMGUI_IMPL_OPENGL_LOADER_GLEW)
