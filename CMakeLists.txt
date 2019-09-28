@@ -18,7 +18,6 @@ add_subdirectory(lib/imgui)
 
 add_executable(mindreader main.cpp util.cpp)
 
-add_definitions(-DIMGUI_IMPL_OPENGL_LOADER_GLEW)
 
 target_include_directories(mindreader PUBLIC ${GLFW_INCLUDE_DIRS})
 target_include_directories(mindreader PUBLIC "lib/imgui")
@@ -29,6 +28,7 @@ target_compile_definitions(mindreader PUBLIC IMGUI_IMPL_OPENGL_LOADER_GLEW)
 target_link_libraries(mindreader
 #    absl::strings
     fmt::fmt
+    ${OPENGL_LIBRARIES}
     ${GLFW_LIBRARIES}
     ${GLEW_LIBRARIES}
     imgui)

@@ -15,5 +15,10 @@ add_library(imgui STATIC ${IMGUI_HEADERS} ${IMGUI_SOURCES})
 target_include_directories(imgui PUBLIC ${GLFW_INCLUDE_DIRS})
 target_include_directories(imgui PUBLIC ${GLEW_INCLUDE_DIRS})
 message(${GLEW_INCLUDE_DIRS})
+
 target_compile_definitions(imgui PUBLIC IMPL_OPENGL_LOADER_GLEW)
-add_definitions(-DIMGUI_IMPL_OPENGL_LOADER_GLEW)
+
+
+target_link_libraries(imgui
+#    absl::strings
+    ${OPENGL_LIBRARIES})
