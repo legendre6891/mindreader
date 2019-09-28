@@ -85,22 +85,22 @@ int main() {
         }
     }
 
-    // for (auto a : grid3) {
-    //     for (auto b : grid3) {
-    //         for (auto c : grid3) {
-    //             for (auto d : grid3) {
-    //                 if (runif() <= 2.2) {
-    //                     experts.push_back(LengthTwoExpert(a, b, c, d));
-    //                     labels.push_back(fmt::format(
-    //                         "LengthTwo[{:.2f} {:.2f} {:.2f} {:.2f}]", a, b,
-    //                         c, d));
-    //                 }
-    //             }
-    //         }
-    //     }
-    // }
+    for (auto a : grid3) {
+        for (auto b : grid3) {
+            for (auto c : grid3) {
+                for (auto d : grid3) {
+                    if (runif() <= 2.2) {
+                        experts.push_back(LengthTwoExpert(a, b, c, d));
+                        labels.push_back(fmt::format(
+                            "LengthTwo[{:.2f} {:.2f} {:.2f} {:.2f}]", a, b,
+                            c, d));
+                    }
+                }
+            }
+        }
+    }
 
-    int n_rounds = 49;
+    int n_rounds = 101;
     int n_experts = experts.size();
     auto E = ExpertAdvice<int, int>(zero_one_loss, n_rounds, experts, labels);
 
