@@ -6,7 +6,6 @@ pkg_search_module(GLEW REQUIRED glew)
 
 
 
-target_include_directories(mindreader PUBLIC ${GLFW_INCLUDE_DIRS})
 
 
 set(IMGUI_INCLUDE_DIR ${PROJECT_SOURCE_DIR}/lib/imgui)
@@ -16,3 +15,5 @@ file(GLOB IMGUI_HEADERS ${IMGUI_INCLUDE_DIR}/*.h)
     
 
 add_library(imgui STATIC ${IMGUI_HEADERS} ${IMGUI_SOURCES})
+
+target_include_directories(PUBLIC ${GLFW_INCLUDE_DIRS})
